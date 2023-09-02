@@ -4,7 +4,7 @@ const form = document.querySelector('.form');
 
 form.addEventListener('submit', onSubmitForm);
 
-const onSubmitForm = evt => {
+function onSubmitForm(evt) {
   evt.preventDefault();
   const { delay, step, amount } = evt.currentTarget.elements;
 
@@ -31,9 +31,9 @@ const onSubmitForm = evt => {
     }
   }
   evt.currentTarget.reset();
-};
+}
 
-const createPromise = (position, delay) => {
+function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
   return new Promise((fulfill, reject) => {
     setTimeout(() => {
@@ -44,4 +44,4 @@ const createPromise = (position, delay) => {
       }
     }, delay);
   });
-};
+}
